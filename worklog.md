@@ -48,3 +48,28 @@ Verification:
 Stage Summary:
 - Production-ready single-page Appitic SaaS marketing site complete and browser-verified.
 - All 8 products showcased, working contact form with database persistence, sticky footer, responsive.
+
+---
+Task ID: 2
+Agent: main (orchestrator)
+Task: Force light theme, enlarge the "Appitic" wordmark, make navbar background dark blue on scroll, and push to GitHub (buffyjdv-collab/Appitic).
+
+Work Log:
+- layout.tsx: forced light theme — added className="light", style color-scheme: light, and an inline script that strips any `dark` class before paint.
+- navbar.tsx: rewrote so the chrome is theme-aware via a `dark = scrolled` flag.
+  - Scrolled: bg-blue-950/95 + backdrop blur, border-blue-900/60, white wordmark, blue-100 links (hover white), white toggle, dark-blue mobile panel.
+  - Top: transparent, dark text, light mobile panel.
+  - Enlarged wordmark to text-2xl bold; logo mark to h-9 w-9.
+- footer.tsx: enlarged "Appitic" wordmark to text-2xl bold + h-9 logo.
+- .gitignore: added db/*.db, db/*.db-journal, *.pid, .zscripts/*.pid.
+- Untracked db/custom.db and .zscripts/dev.pid (local runtime artifacts).
+- Committed (d75add7) and pushed to https://github.com/buffyjdv-collab/Appitic (main branch).
+- Verified push: remote refs/heads/main = d75add7 (matches local).
+
+Verification:
+- bun run lint: clean.
+- Agent Browser + VLM: top state = transparent/light with dark text + large bold "Appitic"; scrolled state = navy background with white text + white "Appitic". Both confirmed correct.
+
+Stage Summary:
+- Light theme forced, Appitic wordmark enlarged, dark-blue-on-scroll navbar implemented and browser-verified.
+- Code pushed to GitHub main branch successfully.
