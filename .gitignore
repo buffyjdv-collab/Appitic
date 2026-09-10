@@ -52,3 +52,12 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Database files (keep schema, ignore local data)
+db/*.db
+db/*.db-journal
+prisma/migrations/dev.db*
+
+# Runtime pid files
+.zscripts/*.pid
+*.pid

@@ -52,8 +52,8 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="#top" className="flex items-center gap-2.5" aria-label="Appitic home">
-              <AppiticLogo className="h-8 w-8" />
-              <span className="text-lg font-semibold tracking-tight">Appitic</span>
+              <AppiticLogo className="h-9 w-9" />
+              <span className="text-2xl font-bold tracking-tight">Appitic</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Cloud software that runs schools, hotels, hostels, restaurants,
