@@ -73,3 +73,23 @@ Verification:
 Stage Summary:
 - Light theme forced, Appitic wordmark enlarged, dark-blue-on-scroll navbar implemented and browser-verified.
 - Code pushed to GitHub main branch successfully.
+
+---
+Task ID: 3
+Agent: main (orchestrator)
+Task: Rename company to "Apitec" with big font, remove $29/month & $79/month, update contact email/phone/office, push to git.
+
+Work Log:
+- Renamed "Appitic" -> "Apitec" across: layout.tsx (metadata), logo.tsx (ApitecLogo export), navbar.tsx, footer.tsx, hero.tsx (copy + app.apitec.com URL), features.tsx ("Why Apitec"), testimonials.tsx, contact.tsx (section title + testimonial quote).
+- Enlarged brand wordmark: text-2xl font-bold -> text-3xl font-extrabold (navbar + footer).
+- Removed fixed monthly prices: Starter $29/mo and Professional $79/mo -> "Custom" (period ""), matching Enterprise. All three plans now show "Custom".
+- Updated contact details: email apitec.sales@gmail.com, phone +91 8247589613, office "Venkata Sai Nilayam, Near DMart, Kompally, Hyderabad".
+- Verified no remaining "Appitic"/old prices/old contacts via grep.
+- bun run lint: clean.
+- Investigated a transient 500 in dev.log (AppiticLogo import in footer) — caused by the dev server compiling mid-edit; current files correct (ApitecLogo export/import consistent).
+- Agent Browser + VLM: confirmed "Apitec" wordmark large/bold everywhere, pricing cards show "Custom" (no $/month), contact details exact match, footer shows Apitec. No browser errors.
+- Committed only the 9 content-edited files (5243919); excluded the file-mode-only noise (100644->100755) from the commit scope.
+- Pushed to https://github.com/buffyjdv-collab/Appitic main: d75add7..5243919. Remote refs/heads/main = 5243919 (verified).
+
+Stage Summary:
+- Company renamed to Apitec with enlarged wordmark; monthly prices removed (all "Custom"); contact details updated; changes verified in-browser and pushed to GitHub.
