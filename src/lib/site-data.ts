@@ -194,7 +194,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Appitic's school module cut our fee collection time by 70%. Parents love the app and our staff finally stopped fighting spreadsheets.",
+      "Apitec's school module cut our fee collection time by 70%. Parents love the app and our staff finally stopped fighting spreadsheets.",
     name: "Priya Nair",
     role: "Principal, Greenwood Public School",
     initials: "PN",
@@ -228,8 +228,8 @@ export type Plan = {
 export const plans: Plan[] = [
   {
     name: "Starter",
-    price: "$29",
-    period: "/month",
+    price: "Custom",
+    period: "",
     description: "For small teams getting started with their first location.",
     features: [
       "1 product module",
@@ -242,8 +242,8 @@ export const plans: Plan[] = [
   },
   {
     name: "Professional",
-    price: "$79",
-    period: "/month",
+    price: "Custom",
+    period: "",
     description: "For growing businesses running multiple workflows.",
     features: [
       "Up to 3 product modules",

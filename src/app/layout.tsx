@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Appitic — All-in-One SaaS Solutions for Modern Businesses",
+  title: "Apitec — All-in-One SaaS Solutions for Modern Businesses",
   description:
-    "Appitic builds cloud software that runs your business: school management, hostel, hotel, QR menu, laundry, pharmacy, food & grocery delivery. Simple, secure, scalable.",
+    "Apitec builds cloud software that runs your business: school management, hostel, hotel, QR menu, laundry, pharmacy, food & grocery delivery. Simple, secure, scalable.",
   keywords: [
-    "Appitic",
+    "Apitec",
     "SaaS",
     "school management software",
     "hostel management",
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     "food delivery",
     "grocery delivery",
   ],
-  authors: [{ name: "Appitic" }],
+  authors: [{ name: "Apitec" }],
   icons: {
     icon: "/logo.svg",
   },
   openGraph: {
-    title: "Appitic — All-in-One SaaS Solutions",
+    title: "Apitec — All-in-One SaaS Solutions",
     description:
       "Cloud software for schools, hotels, hostels, restaurants, pharmacies, laundry, food & grocery delivery.",
-    siteName: "Appitic",
+    siteName: "Apitec",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Appitic — All-in-One SaaS Solutions",
+    title: "Apitec — All-in-One SaaS Solutions",
     description:
       "Cloud software for schools, hotels, hostels, restaurants, pharmacies, laundry, food & grocery delivery.",
   },

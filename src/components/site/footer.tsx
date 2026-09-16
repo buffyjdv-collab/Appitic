@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
-import { AppiticLogo } from "./logo";
+import { ApitecLogo } from "./logo";
 import { products } from "@/lib/site-data";
 
 const footerNav = [
@@ -51,9 +51,9 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Link href="#top" className="flex items-center gap-2.5" aria-label="Appitic home">
-              <AppiticLogo className="h-9 w-9" />
-              <span className="text-2xl font-bold tracking-tight">Appitic</span>
+            <Link href="#top" className="flex items-center gap-2.5" aria-label="Apitec home">
+              <ApitecLogo className="h-9 w-9" />
+              <span className="text-3xl font-extrabold tracking-tight">Apitec</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Cloud software that runs schools, hotels, hostels, restaurants,
@@ -97,7 +97,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Appitic. All rights reserved.
+            © {new Date().getFullYear()} Apitec. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Built for businesses that move fast.

@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { Menu, X, Boxes } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { AppiticLogo } from "./logo";
+import { ApitecLogo } from "./logo";
 
 const navLinks = [
   { label: "Products", href: "#products" },
-  { label: "Why Appitic", href: "#features" },
+  { label: "Why Apitec", href: "#features" },
   { label: "How it works", href: "#process" },
   { label: "Pricing", href: "#pricing" },
   { label: "Customers", href: "#testimonials" },
@@ -48,15 +48,15 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="#top" className="flex items-center gap-2.5" aria-label="Appitic home">
-          <AppiticLogo className="h-9 w-9" />
+        <Link href="#top" className="flex items-center gap-2.5" aria-label="Apitec home">
+          <ApitecLogo className="h-9 w-9" />
           <span
             className={cn(
-              "text-2xl font-bold tracking-tight transition-colors",
+              "text-3xl font-extrabold tracking-tight transition-colors",
               dark ? "text-white" : "text-foreground"
             )}
           >
-            Appitic
+            Apitec
           </span>
         </Link>
 

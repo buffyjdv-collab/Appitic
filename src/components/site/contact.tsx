@@ -99,14 +99,14 @@ export function Contact() {
             <SectionHeading
               align="left"
               eyebrow="Get started"
-              title="Let's get your business on Appitic"
+              title="Let's get your business on Apitec"
               description="Tell us which products you're interested in and a bit about your business. We'll set up a personalized demo and a free trial."
             />
 
             <div className="mt-8 space-y-4">
-              <ContactRow icon={Mail} label="Email" value="hello@appitic.com" />
-              <ContactRow icon={Phone} label="Phone" value="+1 (415) 555-0142" />
-              <ContactRow icon={MapPin} label="Office" value="221 Market St, San Francisco, CA" />
+              <ContactRow icon={Mail} label="Email" value="apitec.sales@gmail.com" />
+              <ContactRow icon={Phone} label="Phone" value="+91 8247589613" />
+              <ContactRow icon={MapPin} label="Office" value="Venkata Sai Nilayam, Near DMart, Kompally, Hyderabad" />
             </div>
 
             <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-5">

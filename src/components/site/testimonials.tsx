@@ -9,7 +9,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Customers"
           title="Trusted by businesses that move fast"
-          description="From single-location cafes to multi-campus schools, teams rely on Appitic to run their day-to-day."
+          description="From single-location cafes to multi-campus schools, teams rely on Apitec to run their day-to-day."
         />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">

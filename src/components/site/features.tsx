@@ -7,7 +7,7 @@ export function Features() {
       <div className="absolute inset-0 -z-10 bg-dot mask-fade-b opacity-50" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Why Appitic"
+          eyebrow="Why Apitec"
           title="Built to be simple. Engineered to scale."
           description="Every product shares the same foundation — so you get a consistent, reliable experience no matter which modules you run."
         />

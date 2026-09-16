@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export function AppiticLogo({ className }: { className?: string }) {
+export function ApitecLogo({ className }: { className?: string }) {
   return (
     <span
       className={cn(

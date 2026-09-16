@@ -40,7 +40,7 @@ export function Hero() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-balance text-base text-muted-foreground sm:text-lg lg:mx-0">
-              Appitic builds cloud software for schools, hotels, hostels,
+              Apitec builds cloud software for schools, hotels, hostels,
               restaurants, pharmacies, laundry, food &amp; grocery delivery —
               clean, secure and ready to scale.
             </p>
@@ -124,7 +124,7 @@ function HeroDashboard() {
             </div>
           </div>
           <span className="text-xs font-medium text-muted-foreground">
-            app.appitic.com/dashboard
+            app.apitec.com/dashboard
           </span>
         </div>
 
