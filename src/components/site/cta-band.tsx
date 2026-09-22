@@ -19,7 +19,7 @@ export function CtaBand() {
             <div className="absolute -top-16 left-1/2 h-40 w-96 -translate-x-1/2 rounded-full bg-white/20 blur-3xl" />
             <div className="relative">
               <h2 className="text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                Try Apitec for 14 days free 🚀
+                Try Apitec for 14 days free
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-balance text-base text-white/80 sm:text-lg">
                 Get full access to every product and feature. No credit card, no

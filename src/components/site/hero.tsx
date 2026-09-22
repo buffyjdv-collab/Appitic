@@ -36,7 +36,7 @@ export function Hero() {
             </div>
 
             <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Meet your all·in·one business store 🚀
+              Meet your all·in·one business store
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-balance text-base text-white/80 sm:text-lg lg:mx-0">

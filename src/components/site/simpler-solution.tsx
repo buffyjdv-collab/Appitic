@@ -17,7 +17,7 @@ export function SimplerSolution() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="A simpler solution"
-          title="No more juggling 5+ different apps 💡"
+          title="No more juggling 5+ different apps"
           description="Apitec brings everything home. One login, one invoice, one dashboard — for every part of your business."
         />
 

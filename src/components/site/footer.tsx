@@ -100,7 +100,7 @@ export function Footer() {
           <p className="text-xs text-white/50">
             © {new Date().getFullYear()} Apitec. All rights reserved.
           </p>
-          <p className="text-xs text-white/50">Built for businesses that move fast 🚀</p>
+          <p className="text-xs text-white/50">Built for businesses that move fast</p>
         </div>
       </div>
     </footer>

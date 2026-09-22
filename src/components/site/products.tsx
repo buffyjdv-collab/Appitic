@@ -11,7 +11,7 @@ export function Products() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Everything in one place"
-          title="Everything you need to run your business 💼"
+          title="Everything you need to run your business"
           description="Eight focused products that share one account, one storefront and one dashboard. Pick what you need today — add more as you grow."
         />
 
