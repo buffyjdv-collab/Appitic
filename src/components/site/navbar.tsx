@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X, Boxes } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ApitecLogo } from "./logo";
@@ -26,7 +26,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -34,16 +33,16 @@ export function Navbar() {
     };
   }, [open]);
 
-  // When the header chrome is dark (scrolled) or the mobile panel is open on a
-  // transparent header, we render light-colored text on top of a dark blue bar.
-  const dark = scrolled;
+  // Over the purple hero (top): transparent + white text.
+  // Scrolled over white sections: solid white + navy text.
+  const solid = scrolled;
 
   return (
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-blue-950/95 backdrop-blur-xl border-b border-blue-900/60 shadow-sm shadow-blue-950/20"
+        solid
+          ? "bg-white/90 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -52,8 +51,8 @@ export function Navbar() {
           <ApitecLogo className="h-9 w-9" />
           <span
             className={cn(
-              "text-3xl font-extrabold tracking-tight transition-colors",
-              dark ? "text-white" : "text-foreground"
+              "text-2xl font-extrabold tracking-tight transition-colors",
+              solid ? "text-foreground" : "text-white"
             )}
           >
             Apitec
@@ -66,10 +65,10 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                dark
-                  ? "text-blue-100 hover:text-white hover:bg-white/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                "rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                solid
+                  ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               )}
             >
               {link.label}
@@ -78,27 +77,19 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button
-            variant="ghost"
-            size="sm"
-            asChild
-            className={cn(dark && "text-blue-100 hover:text-white hover:bg-white/10")}
-          >
-            <Link href="#contact">Sign in</Link>
+          <Button variant="ghost" size="sm" asChild className={cn(!solid && "text-white hover:bg-white/10 hover:text-white")}>
+            <Link href="#contact">Log in</Link>
           </Button>
           <Button size="sm" asChild>
-            <Link href="#contact">
-              <Boxes className="mr-1.5 h-4 w-4" />
-              Get started
-            </Link>
+            <Link href="#contact">Get started</Link>
           </Button>
         </div>
 
         <button
           type="button"
           className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors md:hidden",
-            dark ? "text-white hover:bg-white/10" : "text-foreground hover:bg-foreground/5"
+            "inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors md:hidden",
+            solid ? "text-foreground hover:bg-primary/5" : "text-white hover:bg-white/10"
           )}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
@@ -112,9 +103,7 @@ export function Navbar() {
       <div
         className={cn(
           "overflow-hidden backdrop-blur-xl transition-[max-height,opacity] duration-300 md:hidden",
-          scrolled
-            ? "border-t border-blue-900/60 bg-blue-950/95"
-            : "border-t border-border/70 bg-background/95",
+          solid ? "bg-white/95 border-t border-border" : "bg-white/95 border-t border-white/10",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         )}
       >
@@ -124,31 +113,15 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={cn(
-                "rounded-md px-3 py-2.5 text-base font-medium transition-colors",
-                scrolled
-                  ? "text-blue-100 hover:bg-white/10 hover:text-white"
-                  : "text-foreground/80 hover:bg-muted"
-              )}
+              className="rounded-full px-4 py-2.5 text-base font-medium text-foreground/80 transition-colors hover:bg-primary/5 hover:text-primary"
             >
               {link.label}
             </Link>
           ))}
           <div className="mt-2 flex flex-col gap-2">
-            {scrolled ? (
-              <Button
-                variant="outline"
-                asChild
-                onClick={() => setOpen(false)}
-                className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              >
-                <Link href="#contact">Sign in</Link>
-              </Button>
-            ) : (
-              <Button variant="outline" asChild onClick={() => setOpen(false)}>
-                <Link href="#contact">Sign in</Link>
-              </Button>
-            )}
+            <Button variant="outline" asChild onClick={() => setOpen(false)}>
+              <Link href="#contact">Log in</Link>
+            </Button>
             <Button asChild onClick={() => setOpen(false)}>
               <Link href="#contact">Get started</Link>
             </Button>

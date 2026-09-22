@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -14,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apitec — All-in-One SaaS Solutions for Modern Businesses",
+  title: "Apitec — Your All-in-One Business Store",
   description:
-    "Apitec builds cloud software that runs your business: school management, hostel, hotel, QR menu, laundry, pharmacy, food & grocery delivery. Simple, secure, scalable.",
+    "Apitec is the easiest way to run your business. Schools, hotels, hostels, restaurants, pharmacies, laundry, food & grocery delivery — all hosted in one link-in-bio style storefront.",
   keywords: [
     "Apitec",
     "SaaS",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
   },
   openGraph: {
-    title: "Apitec — All-in-One SaaS Solutions",
+    title: "Apitec — Your All-in-One Business Store",
     description:
       "Cloud software for schools, hotels, hostels, restaurants, pharmacies, laundry, food & grocery delivery.",
     siteName: "Apitec",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apitec — All-in-One SaaS Solutions",
+    title: "Apitec — Your All-in-One Business Store",
     description:
       "Cloud software for schools, hotels, hostels, restaurants, pharmacies, laundry, food & grocery delivery.",
   },
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="light" style={{ colorScheme: "light" }}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${jakarta.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         {/* Force light theme: strip any dark class before paint */}
         <script

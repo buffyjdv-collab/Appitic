@@ -46,18 +46,19 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-border bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="mt-auto bg-navy text-white">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="#top" className="flex items-center gap-2.5" aria-label="Apitec home">
               <ApitecLogo className="h-9 w-9" />
-              <span className="text-3xl font-extrabold tracking-tight">Apitec</span>
+              <span className="text-2xl font-extrabold tracking-tight">Apitec</span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Cloud software that runs schools, hotels, hostels, restaurants,
-              pharmacies, laundry, food &amp; grocery delivery — all in one platform.
+            <p className="mt-4 max-w-xs text-sm text-white/60">
+              Your all-in-one business store. Cloud software for schools, hotels,
+              hostels, restaurants, pharmacies, laundry, food &amp; grocery
+              delivery.
             </p>
             <div className="mt-5 flex gap-2">
               {socials.map((s) => (
@@ -65,7 +66,7 @@ export function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[oklch(0.83_0.17_165)] hover:text-[oklch(0.83_0.17_165)]"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
@@ -77,13 +78,13 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
             {footerNav.map((col) => (
               <div key={col.title}>
-                <h3 className="text-sm font-semibold">{col.title}</h3>
+                <h3 className="text-sm font-bold">{col.title}</h3>
                 <ul className="mt-3 space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                        className="text-sm text-white/60 transition-colors hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -95,13 +96,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
+          <p className="text-xs text-white/50">
             © {new Date().getFullYear()} Apitec. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Built for businesses that move fast.
-          </p>
+          <p className="text-xs text-white/50">Built for businesses that move fast 🚀</p>
         </div>
       </div>
     </footer>

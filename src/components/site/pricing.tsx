@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-20 sm:py-28">
+    <section id="pricing" className="bg-muted py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Pricing"
@@ -20,24 +20,30 @@ export function Pricing() {
             <div
               key={plan.name}
               className={cn(
-                "relative flex flex-col rounded-2xl border bg-card p-6",
+                "relative flex flex-col rounded-3xl border p-7",
                 plan.featured
-                  ? "border-primary shadow-xl shadow-primary/10 lg:-mt-3 lg:mb-3"
-                  : "border-border"
+                  ? "border-transparent bg-primary text-white shadow-soft-lg lg:-mt-3 lg:mb-3"
+                  : "border-border bg-card"
               )}
             >
               {plan.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground shadow-sm">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[oklch(0.83_0.17_165)] px-3 py-1 text-xs font-bold text-navy shadow-sm">
                   Most popular
                 </span>
               )}
 
-              <h3 className="text-base font-semibold">{plan.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
+              <h3 className={cn("text-lg font-bold", plan.featured && "text-white")}>
+                {plan.name}
+              </h3>
+              <p className={cn("mt-1 text-sm", plan.featured ? "text-white/80" : "text-muted-foreground")}>
+                {plan.description}
+              </p>
 
               <div className="mt-5 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight">{plan.price}</span>
-                <span className="text-sm text-muted-foreground">{plan.period}</span>
+                <span className="text-4xl font-extrabold tracking-tight">{plan.price}</span>
+                <span className={cn("text-sm", plan.featured ? "text-white/70" : "text-muted-foreground")}>
+                  {plan.period}
+                </span>
               </div>
 
               <Button
@@ -50,9 +56,9 @@ export function Pricing() {
 
               <ul className="mt-6 space-y-2.5">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <span className="text-foreground/90">{f}</span>
+                  <li key={f} className={cn("flex items-start gap-2 text-sm", plan.featured ? "text-white/90" : "text-foreground/90")}>
+                    <Check className={cn("mt-0.5 h-4 w-4 shrink-0", plan.featured ? "text-[oklch(0.83_0.17_165)]" : "text-primary")} />
+                    {f}
                   </li>
                 ))}
               </ul>

@@ -88,10 +88,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-20 sm:py-28">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-      </div>
+    <section id="contact" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left: copy + contact details */}
@@ -99,7 +96,7 @@ export function Contact() {
             <SectionHeading
               align="left"
               eyebrow="Get started"
-              title="Let's get your business on Apitec"
+              title="Let's get your business on Apitec 🎉"
               description="Tell us which products you're interested in and a bit about your business. We'll set up a personalized demo and a free trial."
             />
 
@@ -109,8 +106,8 @@ export function Contact() {
               <ContactRow icon={MapPin} label="Office" value="Venkata Sai Nilayam, Near DMart, Kompally, Hyderabad" />
             </div>
 
-            <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-5">
-              <p className="text-sm font-medium text-primary">14-day free trial</p>
+            <div className="mt-8 rounded-3xl border border-primary/20 bg-primary/5 p-5">
+              <p className="text-sm font-bold text-primary">14-day free trial</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 No credit card needed. Full access to every feature. Cancel anytime.
               </p>
@@ -118,22 +115,18 @@ export function Contact() {
           </div>
 
           {/* Right: form */}
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
             {done ? (
               <div className="flex h-full min-h-[24rem] flex-col items-center justify-center text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <CheckCircle2 className="h-7 w-7" />
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[oklch(0.83_0.17_165)]/20 text-[oklch(0.5_0.18_165)]">
+                  <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">Thank you!</h3>
+                <h3 className="mt-4 text-xl font-extrabold">Thank you!</h3>
                 <p className="mt-1 max-w-sm text-sm text-muted-foreground">
-                  Your request has been received. Our team will reach out within one
-                  business day to schedule your demo.
+                  Your request has been received. Our team will reach out within
+                  one business day to schedule your demo.
                 </p>
-                <Button
-                  variant="outline"
-                  className="mt-5"
-                  onClick={() => setDone(false)}
-                >
+                <Button variant="outline" className="mt-5" onClick={() => setDone(false)}>
                   Send another message
                 </Button>
               </div>
@@ -141,45 +134,24 @@ export function Contact() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Full name" error={errors.name?.message} required>
-                    <Input
-                      placeholder="Jane Doe"
-                      autoComplete="name"
-                      {...register("name")}
-                    />
+                    <Input placeholder="Jane Doe" autoComplete="name" {...register("name")} />
                   </Field>
                   <Field label="Work email" error={errors.email?.message} required>
-                    <Input
-                      type="email"
-                      placeholder="jane@company.com"
-                      autoComplete="email"
-                      {...register("email")}
-                    />
+                    <Input type="email" placeholder="jane@company.com" autoComplete="email" {...register("email")} />
                   </Field>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Company" error={errors.company?.message}>
-                    <Input
-                      placeholder="Acme Inc."
-                      autoComplete="organization"
-                      {...register("company")}
-                    />
+                    <Input placeholder="Acme Inc." autoComplete="organization" {...register("company")} />
                   </Field>
                   <Field label="Phone" error={errors.phone?.message}>
-                    <Input
-                      type="tel"
-                      placeholder="+1 415 555 0142"
-                      autoComplete="tel"
-                      {...register("phone")}
-                    />
+                    <Input type="tel" placeholder="+91 8247589613" autoComplete="tel" {...register("phone")} />
                   </Field>
                 </div>
 
                 <Field label="Product of interest" error={errors.product?.message}>
-                  <Select
-                    value={productValue}
-                    onValueChange={(v) => setValue("product", v)}
-                  >
+                  <Select value={productValue} onValueChange={(v) => setValue("product", v)}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a product (optional)" />
                     </SelectTrigger>
@@ -189,9 +161,7 @@ export function Contact() {
                           {p.name}
                         </SelectItem>
                       ))}
-                      <SelectItem value="Multiple products">
-                        Multiple products
-                      </SelectItem>
+                      <SelectItem value="Multiple products">Multiple products</SelectItem>
                     </SelectContent>
                   </Select>
                 </Field>
@@ -243,7 +213,7 @@ function Field({
 }) {
   return (
     <div className="space-y-1.5">
-      <Label className="text-sm font-medium">
+      <Label className="text-sm font-semibold">
         {label}
         {required && <span className="ml-0.5 text-destructive">*</span>}
       </Label>
@@ -264,12 +234,12 @@ function ContactRow({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
         <Icon className="h-5 w-5" />
       </span>
       <div>
         <p className="text-xs text-muted-foreground">{label}</p>
-        <p className="text-sm font-medium">{value}</p>
+        <p className="text-sm font-bold">{value}</p>
       </div>
     </div>
   );
