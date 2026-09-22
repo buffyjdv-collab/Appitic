@@ -1,5 +1,6 @@
 import { steps } from "@/lib/site-data";
 import { SectionHeading } from "./section-heading";
+import { RevealGroup, RevealItem } from "./reveal";
 
 export function Process() {
   return (
@@ -13,9 +14,9 @@ export function Process() {
 
         <div className="relative mt-14">
           <div className="absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent lg:block" />
-          <div className="grid gap-8 lg:grid-cols-3">
+          <RevealGroup className="grid gap-8 lg:grid-cols-3">
             {steps.map((s) => (
-              <div key={s.step} className="relative text-center">
+              <RevealItem key={s.step} className="relative text-center">
                 <span className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary bg-card text-lg font-extrabold text-primary shadow-sm">
                   {s.step}
                 </span>
@@ -23,9 +24,9 @@ export function Process() {
                 <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
                   {s.description}
                 </p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </div>
     </section>

@@ -17,7 +17,12 @@ export type Product = {
   description: string;
   icon: LucideIcon;
   features: string[];
-  accent: string; // tailwind classes for icon chip
+  chip: string;   // solid gradient for the icon chip
+  text: string;   // accent text color
+  tint: string;   // card background gradient tint
+  line: string;   // border color
+  ring: string;   // hover ring / glow color
+  flagship?: boolean;
 };
 
 export const products: Product[] = [
@@ -29,7 +34,12 @@ export const products: Product[] = [
       "Students, staff, attendance, fees, exams, timetables and parent communication — unified in one clean dashboard.",
     icon: GraduationCap,
     features: ["Attendance & fees", "Exams & report cards", "Parent portal", "Timetable builder"],
-    accent: "from-emerald-400/20 to-teal-500/10 text-emerald-600",
+    chip: "from-blue-500 to-blue-600",
+    text: "text-blue-600",
+    tint: "from-blue-50",
+    line: "border-blue-200",
+    ring: "shadow-blue-500/25",
+    flagship: true,
   },
   {
     id: "hostel",
@@ -39,7 +49,12 @@ export const products: Product[] = [
       "Manage room allocation, check-ins, mess, billing and maintenance requests for any size hostel or PG.",
     icon: Building2,
     features: ["Room allocation", "Mess & billing", "Maintenance", "Resident records"],
-    accent: "from-teal-400/20 to-cyan-500/10 text-teal-600",
+    chip: "from-blue-500 to-cyan-600",
+    text: "text-blue-600",
+    tint: "from-blue-50",
+    line: "border-blue-200",
+    ring: "shadow-blue-500/25",
+    flagship: true,
   },
   {
     id: "hotel",
@@ -49,7 +64,12 @@ export const products: Product[] = [
       "Reservations, front desk, housekeeping, POS and reporting in a single system built for hotels & resorts.",
     icon: Hotel,
     features: ["Reservations", "Front desk", "Housekeeping", "POS & billing"],
-    accent: "from-amber-400/20 to-orange-500/10 text-amber-600",
+    chip: "from-blue-500 to-indigo-600",
+    text: "text-blue-600",
+    tint: "from-blue-50",
+    line: "border-blue-200",
+    ring: "shadow-blue-500/25",
+    flagship: true,
   },
   {
     id: "qr-menu",
@@ -59,7 +79,11 @@ export const products: Product[] = [
       "Launch beautiful scan-to-order menus for restaurants & cafes with live updates, images and multi-language.",
     icon: QrCode,
     features: ["Scan-to-order", "Live updates", "Multi-language", "Analytics"],
-    accent: "from-lime-400/20 to-emerald-500/10 text-lime-600",
+    chip: "from-emerald-500 to-green-600",
+    text: "text-emerald-600",
+    tint: "from-emerald-50",
+    line: "border-emerald-200",
+    ring: "shadow-emerald-500/25",
   },
   {
     id: "laundry",
@@ -69,7 +93,11 @@ export const products: Product[] = [
       "Track every garment from pickup to delivery, manage routes, customers and recurring subscriptions.",
     icon: Shirt,
     features: ["Order tracking", "Route planning", "Subscriptions", "Customer app"],
-    accent: "from-sky-400/20 to-teal-500/10 text-sky-600",
+    chip: "from-sky-500 to-cyan-600",
+    text: "text-sky-600",
+    tint: "from-sky-50",
+    line: "border-sky-200",
+    ring: "shadow-sky-500/25",
   },
   {
     id: "pharmacy",
@@ -79,7 +107,11 @@ export const products: Product[] = [
       "Stock control, expiry tracking, prescriptions, billing and GST compliance for pharmacies & clinics.",
     icon: Pill,
     features: ["Stock & expiry", "Prescriptions", "GST billing", "Supplier orders"],
-    accent: "from-rose-400/20 to-red-500/10 text-rose-600",
+    chip: "from-rose-500 to-pink-600",
+    text: "text-rose-600",
+    tint: "from-rose-50",
+    line: "border-rose-200",
+    ring: "shadow-rose-500/25",
   },
   {
     id: "food",
@@ -89,7 +121,11 @@ export const products: Product[] = [
       "Run a multi-restaurant delivery platform with live order tracking, rider dispatch and payouts.",
     icon: UtensilsCrossed,
     features: ["Multi-restaurant", "Live tracking", "Rider dispatch", "Auto payouts"],
-    accent: "from-orange-400/20 to-amber-500/10 text-orange-600",
+    chip: "from-orange-500 to-amber-600",
+    text: "text-orange-600",
+    tint: "from-orange-50",
+    line: "border-orange-200",
+    ring: "shadow-orange-500/25",
   },
   {
     id: "grocery",
@@ -99,7 +135,11 @@ export const products: Product[] = [
       "Launch an online grocery store with catalog, slots, delivery routing and subscription orders.",
     icon: ShoppingCart,
     features: ["Catalog & slots", "Delivery routing", "Subscriptions", "Inventory sync"],
-    accent: "from-green-400/20 to-emerald-500/10 text-green-600",
+    chip: "from-green-500 to-emerald-600",
+    text: "text-green-600",
+    tint: "from-green-50",
+    line: "border-green-200",
+    ring: "shadow-green-500/25",
   },
 ];
 

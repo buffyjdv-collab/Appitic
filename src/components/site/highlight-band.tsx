@@ -1,11 +1,12 @@
 import { Check } from "lucide-react";
+import { RevealGroup, RevealItem } from "./reveal";
 
 export function HighlightBand() {
   return (
     <section className="bg-muted py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
+        <RevealGroup className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <RevealItem>
             <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary">
               No surprises
             </span>
@@ -34,9 +35,10 @@ export function HighlightBand() {
                 </li>
               ))}
             </ul>
-          </div>
+          </RevealItem>
 
           {/* Decorative receipt card */}
+          <RevealItem className="h-full">
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-primary/5 blur-2xl" />
             <div className="rounded-3xl border border-border bg-card p-6 shadow-soft">
@@ -69,7 +71,8 @@ export function HighlightBand() {
               </div>
             </div>
           </div>
-        </div>
+          </RevealItem>
+        </RevealGroup>
       </div>
     </section>
   );

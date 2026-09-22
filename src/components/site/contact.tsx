@@ -19,6 +19,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { products } from "@/lib/site-data";
 import { SectionHeading } from "./section-heading";
+import { Reveal } from "./reveal";
 
 const schema = z.object({
   name: z.string().min(2, "Name is required").max(80),
@@ -92,6 +93,7 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left: copy + contact details */}
+          <Reveal>
           <div>
             <SectionHeading
               align="left"
@@ -113,8 +115,10 @@ export function Contact() {
               </p>
             </div>
           </div>
+          </Reveal>
 
           {/* Right: form */}
+          <Reveal delay={0.1}>
           <div className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
             {done ? (
               <div className="flex h-full min-h-[24rem] flex-col items-center justify-center text-center">
@@ -194,6 +198,7 @@ export function Contact() {
               </form>
             )}
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

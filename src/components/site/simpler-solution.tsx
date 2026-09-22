@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import { SectionHeading } from "./section-heading";
+import { RevealGroup, RevealItem } from "./reveal";
 import { products } from "@/lib/site-data";
 
 const withoutApitec = [
@@ -20,9 +21,10 @@ export function SimplerSolution() {
           description="Apitec brings everything home. One login, one invoice, one dashboard — for every part of your business."
         />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <RevealGroup className="mt-12 grid gap-5 lg:grid-cols-2">
           {/* Without */}
-          <div className="rounded-3xl border-2 border-dashed border-border bg-muted/40 p-7">
+          <RevealItem className="h-full">
+          <div className="h-full rounded-3xl border-2 border-dashed border-border bg-muted/40 p-7">
             <span className="inline-block rounded-full bg-destructive/10 px-3 py-1 text-xs font-bold text-destructive">
               Without Apitec
             </span>
@@ -38,9 +40,11 @@ export function SimplerSolution() {
               ))}
             </ul>
           </div>
+          </RevealItem>
 
           {/* With */}
-          <div className="relative rounded-3xl border border-primary/20 bg-card p-7 shadow-soft">
+          <RevealItem className="h-full">
+          <div className="relative h-full rounded-3xl border border-primary/20 bg-card p-7 shadow-soft">
             <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-primary/5 blur-2xl" />
             <span className="inline-block rounded-full bg-[oklch(0.83_0.17_165)]/20 px-3 py-1 text-xs font-bold text-[oklch(0.5_0.18_165)]">
               With Apitec
@@ -75,7 +79,8 @@ export function SimplerSolution() {
               ))}
             </div>
           </div>
-        </div>
+          </RevealItem>
+        </RevealGroup>
       </div>
     </section>
   );

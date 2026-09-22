@@ -1,19 +1,20 @@
 import { stats } from "@/lib/site-data";
+import { RevealGroup, RevealItem } from "./reveal";
 
 export function Stats() {
   return (
     <section className="bg-muted">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <RevealGroup className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
+            <RevealItem key={s.label} className="text-center">
               <p className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">
                 {s.value}
               </p>
               <p className="mt-1 text-sm font-medium text-muted-foreground">{s.label}</p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );
