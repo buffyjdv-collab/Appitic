@@ -158,3 +158,27 @@ Git:
 
 Stage Summary:
 - Hero revenue bars removed; testimonials cards black; School/Hostel/Hotel cards restyled as beautiful blue flagship cards with Popular badges. Lint clean and pushed to GitHub.
+
+---
+Task ID: 6
+Agent: main (orchestrator)
+Task: Make all 8 product cards smart/beautiful; add scroll-reveal animations for every element on scroll up and down.
+
+Work Log:
+- Created src/components/site/reveal.tsx: Reveal, RevealGroup, RevealItem using framer-motion whileInView with viewport { once: false, amount: 0.15 } so animations re-trigger on BOTH scroll-down entry and scroll-up re-entry (exit resets to hidden).
+- site-data.ts: replaced single `accent` field with per-product color theme: chip (solid gradient), text (accent color), tint (bg gradient), line (border), ring (glow). Colors: school/hostel/hotel=blue (flagship), qr-menu=emerald, laundry=sky, pharmacy=rose, food=orange, grocery=green. Added flagship flag for the 3 blue cards.
+- products.tsx: unified beautiful card template for ALL 8 — border-2 colored border, gradient bg tint (via-white to-white), colored glow blob, solid gradient icon chip (hover scale + rotate), Popular badge on flagship, colored tagline/checks/Learn-more, hover lift + soft shadow. Staggered via RevealGroup/RevealItem.
+- Wrapped scroll-reveal around every section: SectionHeading (all titles/descriptions), Stats, Features, Process, Testimonials, Pricing (staggered grids), HighlightBand, SimplerSolution, CtaBand, Contact (left+right columns).
+
+Verification:
+- bun run lint: clean.
+- DOM ground-truth: 3 Popular badges present; all 8 cards have gradient icon chips (backgroundImage=linear-gradient on every chip).
+- Animation re-trigger test (agent-browser): scrolled past products -> card opacity=0 (reset on exit); scrolled back -> opacity=1 (re-animated on re-entry). Confirms animations fire on scroll up AND down.
+- VLM misread a cut-off screenshot (claimed missing chips/badges); DOM proved all present.
+
+Git:
+- Commit 5ff4058 "feat: beautiful all-8 product cards + scroll-reveal animations (up & down)" (13 files, +329/-190).
+- Pushed to main: e980910..5ff4058. Remote refs/heads/main = 5ff4058.
+
+Stage Summary:
+- All 8 product cards now smart/polished with distinct color themes; every section element animates on scroll-up and scroll-down. Lint clean and pushed to GitHub.
