@@ -133,3 +133,28 @@ Git:
 
 Stage Summary:
 - Apitec restyled to stan.store's visual theme (purple hero, mint pill CTAs, bold emoji headings, rounded white cards, navy footer) while keeping Apitec's content/contact details. Code lint-clean and pushed to GitHub.
+
+---
+Task ID: 5
+Agent: main (orchestrator)
+Task: Remove hero "Today's revenue" bars; make testimonials cards black; make School/Hostel/Hotel product cards beautiful + blue.
+
+Work Log:
+- hero.tsx: removed the mini bar-chart <div> from the "Today's revenue" floating chip (kept the revenue text).
+- testimonials.tsx: card bg -> bg-navy (black) with text-white; quote text-white/90; border-white/10; avatar mint on black; amber stars kept.
+- products.tsx: added BlueProductCard component for ids school/hostel/hotel — blue gradient bg (from-blue-50 via-white), blue-200 border (hover blue-400), solid blue gradient icon chip (from-blue-500 to-blue-600), "Popular" badge (blue gradient + star), blue accents/checks/Learn-more, blue hover glow shadow. Other products keep the standard card.
+
+Verification:
+- bun run lint: clean.
+- DOM ground-truth (agent-browser eval):
+  - Popular badges = 3 (on School/Hostel/Hotel); school card has Popular=true.
+  - School card borderColor = lab(86.15% -4.04 -21.08) = light blue.
+  - Testimonial figure bg = lab(8.078% 2.56 -10.82) = near-black navy.
+- (VLM was imprecise on the small Popular badge + mis-scrolled 2nd screenshot; DOM confirmed correct.)
+
+Git:
+- Commit e980910 "ui: remove hero revenue bars, black testimonial cards, blue School/Hostel/Hotel product cards" (3 files, +86/-49).
+- Pushed to main: 3ee7cba..e980910. Remote refs/heads/main = e980910.
+
+Stage Summary:
+- Hero revenue bars removed; testimonials cards black; School/Hostel/Hotel cards restyled as beautiful blue flagship cards with Popular badges. Lint clean and pushed to GitHub.
