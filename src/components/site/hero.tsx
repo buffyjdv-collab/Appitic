@@ -101,15 +101,6 @@ function StorefrontMockup() {
       <div className="absolute -right-4 bottom-16 z-20 hidden rounded-2xl border border-white/10 bg-white p-3 shadow-soft-lg sm:block">
         <p className="text-[10px] text-muted-foreground">Today's revenue</p>
         <p className="text-sm font-extrabold text-navy">₹48,200</p>
-        <div className="mt-1 flex items-end gap-0.5">
-          {[40, 65, 50, 80, 95].map((h, i) => (
-            <span
-              key={i}
-              className="w-1.5 rounded-full bg-[oklch(0.83_0.17_165)]"
-              style={{ height: `${h * 0.3}rem` }}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Phone-style storefront card */}
